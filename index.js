@@ -5,12 +5,38 @@ const {logger} = require("./logger");
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+/**
+ * Converts the request.rawHeaders array into a JSON object
+ *
+ * @param arr
+ * @returns {{}} a JSON object that reports the raw header information
+ * in the request
+ */
+const parseRawHeader = (arr)=> {
+    let obj = {};
+    let currentKey='';
+    for(let i=0; i < arr.length; i++){
+        if (i % 2 == 0){
+            //this is the key
+            currentKey = arr[i];
+            obj[currentKey]='';
+        }else
+        {
+            obj[currentKey]=arr[i]
+        }
+    }
+    return obj;
+}
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    const rawHeadersJson = parseRawHeader(req.rawHeaders);
+    logger.info(JSON.stringify({requestInfo: rawHeadersJson}));
     next();
 });
+
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
