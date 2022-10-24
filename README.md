@@ -32,7 +32,7 @@ Navigate to the source code directory in a terminal window.
 
 Then run the following command to create the container image.
 
-`buildah build -t simplesite -f Containerfile .`
+`buildah bud -t simplesite -f Containerfile  .`
 
 Follow up with the command to run the container in the background against that image.
 
