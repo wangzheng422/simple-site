@@ -1,0 +1,8 @@
+FROM registry.access.redhat.com/ubi8/nodejs-16
+USER root
+COPY public/ /public/
+COPY index.js .
+COPY package.json .
+RUN npm install --only-production
+EXPOSE 8080
+CMD ["node", "index.js"]
