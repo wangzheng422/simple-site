@@ -26,7 +26,21 @@ In a web browser enter the following URL:
 
 ![localhost](https://user-images.githubusercontent.com/1110569/193900809-922f3c56-a6b6-4de3-bfac-310e70f98f94.png)
 
-# Deploying and running the project as a Linux container
+# Deploying and running the project as a Linux container buildah and Podman
+
+Navigate to the source code directory in a terminal window.
+
+Then run the following command to create the container image.
+
+`buildah build -t simplesite -f Containerfile .`
+
+Follow up with the command to run the container in the background against that image.
+
+`podman run -d -p 8080:8080 simplesite`
+
+Test that the container is operating properly
+
+# Deploying and running the project as a Linux container using Docker
 
 Navigate to the source code directory in a terminal window.
 
