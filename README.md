@@ -34,6 +34,14 @@ Then run the following command to create the container image.
 
 `docker build -t simplesite -f Containerfile .`
 
-Follow up with the command to run the container against that image.
+Follow up with the command to run the container in the background against that image.
 
-`docker container run simplesite`
+`docker container run -d -p 8080:8080 simplesite`
+
+Test that the container is operating properly
+
+`curl localhost:8080`
+
+You will get a response similar to the following:
+
+
