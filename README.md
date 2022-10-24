@@ -28,4 +28,12 @@ In a web browser enter the following URL:
 
 # Deploying the project as a Linux container image
 
-TO BE PROVIDED
+Navigate to the source code directory in a terminal window.
+
+Then run the following command to create the container image.
+
+`docker build -t simplesite -f Containerfile .`
+
+Follow up with the command to run the container against that image.
+
+`docker container run simplesite`
