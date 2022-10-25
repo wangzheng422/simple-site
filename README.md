@@ -1,5 +1,5 @@
 # simple-site
-This project is a demonstration of an Express application that publishes static web pages.
+This project is a demonstration of an Express application that publishes static web pages. The web site runs on port `8080`.
 
 The web pages are stored in the directory `/public` of the project root.
 
