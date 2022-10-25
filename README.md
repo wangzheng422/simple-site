@@ -26,7 +26,7 @@ In a web browser enter the following URL:
 
 ![localhost](https://user-images.githubusercontent.com/1110569/193900809-922f3c56-a6b6-4de3-bfac-310e70f98f94.png)
 
-# Deploying and running the project as a Linux container buildah and Podman
+# Deploying and running the project as a Linux container using buildah and Podman
 
 Navigate to the source code directory in a terminal window.
 
